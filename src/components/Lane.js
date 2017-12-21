@@ -157,7 +157,7 @@ class Lane extends Component {
           placeholder={inputPlaceholder || 'Add a card...'}
           styles={inputStyles}
           onChange={(e) => this.setState({inputValue: e.target.value})}
-          onKeyPress={(e) => this.handleInputKey(e)}
+          onKeyPress={this.handleInputKey}
         />
       </div>
     )
