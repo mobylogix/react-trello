@@ -115,8 +115,8 @@ class Lane extends Component {
   handleInputKey = (e) => {
     const {inputValue} = this.state
     const {id} = this.props
-    console.log(e.keyCode, e.which);
-    console.log(id, inputValue);
+    console.log(e.keyCode, e.which)
+    console.log(id, inputValue)
     if (e.keyCode === 13 || e.which === 13) {
       this.props.handleInput(id, inputValue)
       this.setState({inputValue: undefined})
