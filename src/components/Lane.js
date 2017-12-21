@@ -113,7 +113,7 @@ class Lane extends Component {
     e.stopPropagation()
   }
 
-  handleInputKey(e) {
+  handleInputKey (e) {
     const {inputValue} = this.state
     const {id} = this.props
     console.log(e.keyCode, e.which)
@@ -162,7 +162,7 @@ class Lane extends Component {
             placeholder={inputPlaceholder || 'Add a card...'}
             styles={inputStyles}
             onChange={(e) => this.setState({inputValue: e.target.value})}
-            onKeyPress={this.handleInputKey.bind(this)}
+            onKeyPress={this.handleInputKey}
           />
         }
       </div>
