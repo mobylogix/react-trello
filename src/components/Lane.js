@@ -119,7 +119,7 @@ class Lane extends Component {
     console.log(e.keyCode, e.which)
     console.log(id, inputValue)
     if (e.keyCode === 13 || e.which === 13) {
-      alert(id, inputValue);
+      alert(id, inputValue)
       // this.props.handleInput(id, inputValue)
       // this.setState({inputValue: undefined})
     }
