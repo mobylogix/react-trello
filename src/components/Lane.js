@@ -153,14 +153,12 @@ class Lane extends Component {
         <DraggableList>
           {cardList}
         </DraggableList>
-        {handleInput &&
-          <input
-            placeholder={inputPlaceholder || 'Add a card...'}
-            styles={inputStyles}
-            onChange={(e) => this.setState({inputValue: e.target.value})}
-            onKeyPress={(e) => this.handleInputKey(e)}
-          />
-        }
+        <input
+          placeholder={inputPlaceholder || 'Add a card...'}
+          styles={inputStyles}
+          onChange={(e) => this.setState({inputValue: e.target.value})}
+          onKeyPress={(e) => this.handleInputKey(e)}
+        />
       </div>
     )
   }
