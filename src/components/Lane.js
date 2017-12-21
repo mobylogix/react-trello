@@ -22,7 +22,8 @@ class Lane extends Component {
     currentPage: this.props.currentPage,
     cards: this.props.cards,
     placeholderIndex: -1,
-    shouldUpdate: true
+    shouldUpdate: true,
+    inputValue: ''
   }
 
   handleScroll = evt => {
@@ -108,11 +109,11 @@ class Lane extends Component {
 
   handleCardClick = (e, card) => {
     const {onCardClick} = this.props
-    onCardClick && onCardClick(card.id, card.metadata, card.laneId)
+    onCardClick && onCardClick(card._id, card.metadata, card.laneId)
     e.stopPropagation()
   }
 
-  handleInputKey = (e) => {
+  handleInputKey(e) {
     const {inputValue} = this.state
     const {id} = this.props
     console.log(e.keyCode, e.which)
@@ -125,6 +126,8 @@ class Lane extends Component {
 
   renderDragContainer = () => {
     const {connectDropTarget, laneSortFunction, inputPlaceholder, inputStyles, handleInput} = this.props
+
+    console.log(this.props)
 
     const cardList = this.sortCards(this.state.cards, laneSortFunction).map((card, idx) =>
       <Card
@@ -159,7 +162,7 @@ class Lane extends Component {
             placeholder={inputPlaceholder || 'Add a card...'}
             styles={inputStyles}
             onChange={(e) => this.setState({inputValue: e.target.value})}
-            onKeyPress={(e) => this.handleInputKey(e)}
+            onKeyPress={this.handleInputKey.bind(this)}
           />
         }
       </div>
@@ -227,7 +230,8 @@ Lane.defaultProps = {
   style: {},
   titleStyle: {},
   labelStyle: {},
-  label: undefined
+  label: undefined,
+  inputStyles: {}
 }
 
 const cardTarget = {
