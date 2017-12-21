@@ -112,12 +112,21 @@ class Lane extends Component {
     e.stopPropagation()
   }
 
+  handleInputKey = (e) => {
+    const {inputValue} = this.state;
+    const {id} = this.props;
+    if (e.keyCode == 13 || e.which == 13) {
+      this.props.handleInput(id, inputValue);
+      this.setState({inputValue: undefined});
+    }
+  }
+
   renderDragContainer = () => {
-    const {connectDropTarget, laneSortFunction} = this.props
+    const {id, connectDropTarget, laneSortFunction, inputPlaceholder, inputStyles} = this.props
 
     const cardList = this.sortCards(this.state.cards, laneSortFunction).map((card, idx) =>
       <Card
-        key={card.id}
+        key={card._id}
         index={idx}
         draggable={this.props.draggable}
         customCardLayout={this.props.customCardLayout}
@@ -143,6 +152,12 @@ class Lane extends Component {
         <DraggableList>
           {cardList}
         </DraggableList>
+        <input
+          placeholder={inputPlaceholder || "Add a card..."}
+          styles={inputStyles}
+          onChange={(e) => this.setState({inputValue: e.target.value})}
+          onKeyPress={(e) => this.handleInputKey(e)}
+        />
       </div>
     )
   }
@@ -198,7 +213,10 @@ Lane.propTypes = {
   droppable: PropTypes.bool,
   onLaneScroll: PropTypes.func,
   handleDragStart: PropTypes.func,
-  handleDragEnd: PropTypes.func
+  handleDragEnd: PropTypes.func,
+  inputPlaceholder: PropTypes.string,
+  inputStyles: PropTypes.object,
+  handleInput: PropTypes.func,
 }
 
 Lane.defaultProps = {

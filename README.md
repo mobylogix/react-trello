@@ -12,7 +12,7 @@ Pluggable components to add a trello like kanban board to your application
 * responsive and extensible
 * easily pluggable into existing application
 * supports pagination when scrolling individual lanes
-* drag-and-drop within and across lanes (compatible with touch devices) 
+* drag-and-drop within and across lanes (compatible with touch devices)
 * event bus for triggering events externally (e.g.: adding or removing cards based on events coming from backend)
 
 ## Getting Started
@@ -84,12 +84,15 @@ This is the container component that encapsulates the lanes and cards
 | style            | object   | Pass css style props to board container |
 | customCardLayout | function | Boolean to indicate a custom card template will be specified. Add the card component as child to Board |
 | customLaneHeader | element  | Pass custom lane header as react component to modify appearance |
-| data             | object   | Actual board data in the form of json | 
-| tagStyle         | object   | If cards have tags, use this prop to modify their style | 
+| data             | object   | Actual board data in the form of json |
+| tagStyle         | object   | If cards have tags, use this prop to modify their style |
+| inputPlaceholder | string   | Add placeholder to input field for each lane |
+| inputStyles      | object   | Add styles to input field for each lane |
+| handleInput      | function | Return results in a callback format: handleInput(laneId, value) |
 
 Refer to `stories` folder for examples on many more options for customization.
 
-### Publish Events 
+### Publish Events
 
 When defining the board, it is possible to obtain a event hook to the component to publish new events later after the board has been rendered. Refer the example below:
 
@@ -104,7 +107,7 @@ eventBus.publish({type: 'ADD_CARD', laneId: 'COMPLETED', card: {id: "M1", title:
 
 //To remove a card
 eventBus.publish({type: 'REMOVE_CARD', laneId: 'PLANNED', cardId: "M1"})
-  
+
 <Board data={data}
        eventBusHandle={setEventBus}/>
 ```

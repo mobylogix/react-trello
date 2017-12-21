@@ -1,5 +1,5 @@
 {
-  "name": "react-trello",
+  "name": "@mobylogix/react-trello",
   "description": "Pluggable components to add a trello like kanban board to your application",
   "main": "dist/index.js",
   "jsnext:main": "components/index.js",
@@ -26,7 +26,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/rcdexta/react-trello"
+    "url": "https://github.com/mobylogix/react-trello.git"
   },
   "keywords": [
     "react",
@@ -36,9 +36,9 @@
   "author": "RC, Prakash",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/rcdexta/react-trello/issues"
+    "url": "https://github.com/mobylogix/react-trello/issues"
   },
-  "homepage": "https://github.com/rcdexta/react-trello",
+  "homepage": "https://github.com/mobylogix/react-trello",
   "devDependencies": {
     "@storybook/addon-info": "^3.2.12",
     "@storybook/addon-options": "^3.2.12",

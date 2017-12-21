@@ -17,12 +17,12 @@ class Card extends Component {
         </span>
       )
     } else {
-      const {title, description, label, tags} = this.props
+      const {name, description, label, tags} = this.props
       return (
         <span>
           <CardHeader>
             <CardTitle>
-              {title}
+              {name}
             </CardTitle>
             <CardRightContent>
               {label}
@@ -33,7 +33,7 @@ class Card extends Component {
           </Detail>
           {tags &&
             <Footer>
-              {tags.map(tag => <Tag key={tag.title} {...tag} tagStyle={this.props.tagStyle} />)}
+              {tags.map(tag => <Tag key={tag.name} {...tag} tagStyle={this.props.tagStyle} />)}
             </Footer>}
         </span>
       )
@@ -41,13 +41,13 @@ class Card extends Component {
   }
 
   render () {
-    const {id, connectDragSource, connectDropTarget, isDragging, cardStyle, ...otherProps} = this.props
+    const {_id, connectDragSource, connectDropTarget, isDragging, cardStyle, ...otherProps} = this.props
     const opacity = isDragging ? 0 : 1
     const background = isDragging ? '#CCC' : '#E3E3E3'
     return connectDragSource(
       connectDropTarget(
         <div style={{background: background}}>
-          <CardWrapper key={id} data-id={id} {...otherProps} style={{...cardStyle, opacity: opacity}}>
+          <CardWrapper key={_id} data-id={_id} {...otherProps} style={{...cardStyle, opacity: opacity}}>
             {this.renderBody()}
           </CardWrapper>
         </div>
@@ -62,9 +62,9 @@ const cardSource = {
   },
 
   beginDrag (props) {
-    props.handleDragStart && props.handleDragStart(props.id, props.laneId)
+    props.handleDragStart && props.handleDragStart(props._id, props.laneId)
     return {
-      id: props.id,
+      _id: props._id,
       laneId: props.laneId,
       index: props.index,
       card: props
@@ -76,9 +76,9 @@ const cardSource = {
     const dropResult = monitor.getDropResult()
     if (dropResult) {
       if (dropResult.laneId !== item.laneId) {
-        props.moveCardAcrossLanes(item.laneId, dropResult.laneId, item.id)
+        props.moveCardAcrossLanes(item.laneId, dropResult.laneId, item._id)
       }
-      props.handleDragEnd && props.handleDragEnd(item.id, item.laneId, dropResult.laneId)
+      props.handleDragEnd && props.handleDragEnd(item._id, item.laneId, dropResult.laneId)
     }
   }
 }
@@ -132,8 +132,8 @@ Card.defaultProps = {
 }
 
 Card.propTypes = {
-  id: PropTypes.string.isRequired,
-  title: PropTypes.string,
+  _id: PropTypes.string.isRequired,
+  name: PropTypes.string,
   description: PropTypes.string,
   label: PropTypes.string,
   onClick: PropTypes.func,
