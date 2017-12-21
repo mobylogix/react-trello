@@ -65,7 +65,10 @@ class BoardContainer extends Component {
             'customCardLayout',
             'customLaneHeader',
             'tagStyle',
-            'children'
+            'children',
+            'inputPlaceholder',
+            'inputStyles',
+            'handleInput'
           ])
           return <Lane key={`${id}`} id={id} droppable={droppable === undefined ? true : droppable} {...otherProps} {...passthroughProps} />
         })}
@@ -88,7 +91,10 @@ BoardContainer.propTypes = {
   customCardLayout: PropTypes.bool,
   customLaneHeader: PropTypes.element,
   style: PropTypes.object,
-  tagStyle: PropTypes.object
+  tagStyle: PropTypes.object,
+  inputPlaceholder: PropTypes.string,
+  inputStyles: PropTypes.object,
+  handleInput: PropTypes.func
 }
 
 const mapStateToProps = state => {
