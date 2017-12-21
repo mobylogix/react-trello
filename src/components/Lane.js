@@ -123,7 +123,7 @@ class Lane extends Component {
   }
 
   renderDragContainer = () => {
-    const {connectDropTarget, laneSortFunction, inputPlaceholder, inputStyles, handleInput} = this.props
+    const {connectDropTarget, laneSortFunction, inputPlaceholder, inputStyles} = this.props
 
     const cardList = this.sortCards(this.state.cards, laneSortFunction).map((card, idx) =>
       <Card
