@@ -65,10 +65,7 @@ class BoardContainer extends Component {
             'customCardLayout',
             'customLaneHeader',
             'tagStyle',
-            'children',
-            'inputPlaceholder',
-            'inputStyles',
-            'handleInput'
+            'children'
           ])
           return <Lane key={`${id}`} id={id} droppable={droppable === undefined ? true : droppable} {...otherProps} {...passthroughProps} />
         })}
