@@ -119,8 +119,9 @@ class Lane extends Component {
     console.log(e.keyCode, e.which)
     console.log(id, inputValue)
     if (e.keyCode === 13 || e.which === 13) {
-      this.props.handleInput(id, inputValue)
-      this.setState({inputValue: undefined})
+      alert(id, inputValue);
+      // this.props.handleInput(id, inputValue)
+      // this.setState({inputValue: undefined})
     }
   }
 
@@ -162,7 +163,7 @@ class Lane extends Component {
             placeholder={inputPlaceholder || 'Add a card...'}
             styles={inputStyles}
             onChange={(e) => this.setState({inputValue: e.target.value})}
-            onKeyPress={this.handleInputKey}
+            onKeyPress={(e) => this.handleInputKey(e)}
           />
         }
       </div>
