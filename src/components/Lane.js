@@ -119,8 +119,10 @@ class Lane extends Component {
     if (e.keyCode === 13 || e.which === 13) {
       if (this.props.handleInput) {
         this.props.handleInput(id, inputValue)
-        // this.setState({inputValue: undefined})
+        this.setState({inputValue: undefined})
       } else {
+        console.log(this);
+        console.log(this.props);
         console.log('handleInput is not a prop')
       }
     }
