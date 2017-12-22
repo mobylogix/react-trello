@@ -50,8 +50,6 @@ class BoardContainer extends Component {
 
   render () {
     const {reducerData, style, ...otherProps} = this.props
-    console.log('props in BoardContainer')
-    console.log(this.props)
     return (
       <BoardDiv style={style} {...otherProps}>
         {reducerData.lanes.map(lane => {

@@ -17,12 +17,12 @@ class Card extends Component {
         </span>
       )
     } else {
-      const {name, description, label, tags} = this.props
+      const {title, description, label, tags} = this.props
       return (
         <span>
           <CardHeader>
             <CardTitle>
-              {name}
+              {title}
             </CardTitle>
             <CardRightContent>
               {label}
@@ -33,7 +33,7 @@ class Card extends Component {
           </Detail>
           {tags &&
             <Footer>
-              {tags.map(tag => <Tag key={tag.name} {...tag} tagStyle={this.props.tagStyle} />)}
+              {tags.map(tag => <Tag key={tag.title} {...tag} tagStyle={this.props.tagStyle} />)}
             </Footer>}
         </span>
       )
@@ -133,7 +133,7 @@ Card.defaultProps = {
 
 Card.propTypes = {
   _id: PropTypes.string.isRequired,
-  name: PropTypes.string,
+  title: PropTypes.string,
   description: PropTypes.string,
   label: PropTypes.string,
   onClick: PropTypes.func,
