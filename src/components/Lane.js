@@ -113,12 +113,16 @@ class Lane extends Component {
     e.stopPropagation()
   }
 
-  handleInputKey (e) {
+  handleInputKey = (e) => {
     const {inputValue} = this.state
     const {id} = this.props
     if (e.keyCode === 13 || e.which === 13) {
-      this.props.handleInput(id, inputValue)
-      this.setState({inputValue: undefined})
+      if (this.props.handleInput) {
+        this.props.handleInput(id, inputValue)
+        // this.setState({inputValue: undefined})
+      } else {
+        console.log("handleInput is not a prop");
+      }
     }
   }
 
