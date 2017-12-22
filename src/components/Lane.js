@@ -121,8 +121,8 @@ class Lane extends Component {
         this.props.handleInput(id, inputValue)
         this.setState({inputValue: undefined})
       } else {
-        console.log(this);
-        console.log(this.props);
+        console.log(this)
+        console.log(this.props)
         console.log('handleInput is not a prop')
       }
     }
