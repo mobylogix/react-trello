@@ -160,14 +160,14 @@ class Lane extends Component {
         {handleInput &&
           <div className='lane-input-wrapper'>
             <textarea
-              id="lane-input"
+              id='lane-input'
               placeholder={inputPlaceholder || 'Add a card...'}
               styles={inputStyles}
               value={this.state.inputValue}
               onChange={(e) => this.setState({inputValue: e.target.value})}
               onBlur={(e) => this.setState({inputValue: ''})}
               onKeyPress={this.handleInputKey}
-            ></textarea>
+            />
           </div>
         }
       </div>
