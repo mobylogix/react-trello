@@ -1,6 +1,6 @@
 {
   "name": "@mobylogix/react-trello",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "description": "Pluggable components to add a trello like kanban board to your application",
   "main": "dist/index.js",
   "jsnext:main": "components/index.js",
