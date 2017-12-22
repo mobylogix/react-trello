@@ -92,6 +92,13 @@ This is the container component that encapsulates the lanes and cards
 
 Refer to `stories` folder for examples on many more options for customization.
 
+Classes that can be used
+
+| Name             | Description                              |
+| ---------------- | ---------------------------------------- |
+| lane-input-wrapper| This class can be used for styling of input and its wrapper |
+
+
 ### Publish Events
 
 When defining the board, it is possible to obtain a event hook to the component to publish new events later after the board has been rendered. Refer the example below:
