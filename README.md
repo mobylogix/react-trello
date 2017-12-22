@@ -33,8 +33,8 @@ const data = {
       title: 'Planned Tasks',
       label: '2/2',
       cards: [
-        {id: 'Card1', title: 'Write Blog', description: 'Can AI make memes', label: '30 mins'},
-	    {id: 'Card2', title: 'Pay Rent', description: 'Transfer via NEFT', label: '5 mins', metadata: {sha: 'be312a1'}}
+        {_id: 'Card1', title: 'Write Blog', description: 'Can AI make memes', label: '30 mins'},
+	      {_id: 'Card2', title: 'Pay Rent', description: 'Transfer via NEFT', label: '5 mins', metadata: {sha: 'be312a1'}}
       ]
     },
     {
@@ -166,7 +166,7 @@ const data = {
         title: 'Planned Tasks',
         cards: [
           {
-            id: 'Card1',
+            _id: 'Card1',
             name: 'John Smith',
             dueOn: 'due in a day',
             subTitle: 'SMS received at 12:13pm today',
@@ -176,7 +176,7 @@ const data = {
             cardStyle: { borderRadius: 6, boxShadow: '0 0 6px 1px #BD3B36', marginBottom: 15 }
           },
           {
-            id: 'Card2',
+            _id: 'Card2',
             name: 'Card Weathers',
             dueOn: 'due now',
             subTitle: 'Email received at 1:14pm',
