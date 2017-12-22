@@ -50,6 +50,8 @@ class BoardContainer extends Component {
 
   render () {
     const {reducerData, style, ...otherProps} = this.props
+    console.log('props in BoardContainer')
+    console.log(this.props)
     return (
       <BoardDiv style={style} {...otherProps}>
         {reducerData.lanes.map(lane => {
@@ -67,7 +69,7 @@ class BoardContainer extends Component {
             'tagStyle',
             'children'
           ])
-          return <Lane key={`${id}`} id={id} droppable={droppable === undefined ? true : droppable} {...otherProps} {...passthroughProps} />
+          return <Lane key={`${id}`} id={id} droppable={droppable === undefined ? true : droppable} {...otherProps} {...passthroughProps} handleInput={this.props.handleInput} inputStyles={this.props.inputStyles} inputPlaceholder={this.props.inputPlaceholder} />
         })}
       </BoardDiv>
     )
