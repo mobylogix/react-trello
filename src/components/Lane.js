@@ -158,7 +158,7 @@ class Lane extends Component {
           {cardList}
         </DraggableList>
         {handleInput &&
-          <div className="lane-input-wrapper">
+          <div className='lane-input-wrapper'>
             <input
               placeholder={inputPlaceholder || 'Add a card...'}
               styles={inputStyles}
