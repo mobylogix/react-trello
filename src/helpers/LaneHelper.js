@@ -41,7 +41,7 @@ const LaneHelper = {
   removeCardFromLane: (state, {laneId, cardId}) => {
     const lanes = state.lanes.map(lane => {
       if (lane.id === laneId) {
-        let newCards = lane.cards.filter(card => card.id !== cardId)
+        let newCards = lane.cards.filter(card => card._id !== cardId)
         return update(lane, {cards: {$set: newCards}})
       } else {
         return lane
@@ -54,8 +54,8 @@ const LaneHelper = {
     let cardToMove = null
     const interimLanes = state.lanes.map(lane => {
       if (lane.id === fromLaneId) {
-        cardToMove = lane.cards.find(card => card.id === cardId)
-        const newCards = lane.cards.filter(card => card.id !== cardId)
+        cardToMove = lane.cards.find(card => card._id === cardId)
+        const newCards = lane.cards.filter(card => card._id !== cardId)
         return update(lane, {cards: {$set: newCards}})
       } else {
         return lane
