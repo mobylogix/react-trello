@@ -1,3 +1,5 @@
+import './lane.css'
+
 import React, {Component} from 'react'
 import Loader from './Loader'
 import PropTypes from 'prop-types'
@@ -15,8 +17,6 @@ const laneActions = require('../actions/LaneActions')
 const CARD_HEIGHT = 66
 const CARD_MARGIN = 10
 const OFFSET_HEIGHT = 15
-
-import './lane.css';
 
 class Lane extends Component {
   state = {
