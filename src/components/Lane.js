@@ -16,6 +16,8 @@ const CARD_HEIGHT = 66
 const CARD_MARGIN = 10
 const OFFSET_HEIGHT = 15
 
+import './lane.css';
+
 class Lane extends Component {
   state = {
     loading: false,
@@ -119,6 +121,7 @@ class Lane extends Component {
     if (e.keyCode === 13 || e.which === 13) {
       if (this.props.handleInput) {
         this.props.handleInput(id, inputValue)
+        document.getElementById('lane-input').blur()
         this.setState({inputValue: ''})
       } else {
         console.log('handleInput is not a prop')
