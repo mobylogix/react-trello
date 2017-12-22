@@ -164,6 +164,7 @@ class Lane extends Component {
             value={this.state.inputValue}
             onChange={(e) => this.setState({inputValue: e.target.value})}
             onKeyPress={this.handleInputKey}
+            className="lane-input"
           />
         }
       </div>
