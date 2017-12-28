@@ -21,18 +21,18 @@ class Card extends Component {
       return (
         <span>
           <CardHeader>
-            <CardTitle className="card-title">
+            <CardTitle className='card-title'>
               {title}
             </CardTitle>
-            <CardRightContent className="card-label">
+            <CardRightContent className='card-label'>
               {label}
             </CardRightContent>
           </CardHeader>
-          <Detail className="card-description">
+          <Detail className='card-description'>
             {description}
           </Detail>
           {tags &&
-            <Footer className="card-footer">
+            <Footer className='card-footer'>
               {tags.map(tag => <Tag key={tag.title} {...tag} tagStyle={this.props.tagStyle} />)}
             </Footer>}
         </span>
