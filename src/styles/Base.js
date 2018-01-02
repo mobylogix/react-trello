@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const BoardDiv = styled.div`
-  background-color: #23719f;
+  background-color: #45596f;
   overflow-y: hidden;
   padding: 5px;
   font: 14px/18px "Helvetica Neue", Arial, Helvetica, sans-serif;
